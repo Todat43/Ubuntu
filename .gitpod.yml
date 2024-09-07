@@ -1,0 +1,11 @@
+tasks:
+  - init: |
+      sudo apt-get update
+      sudo apt-get install -y wget unzip
+      wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.17.11.01.zip
+      unzip bedrock-server-1.17.11.01.zip
+      chmod +x bedrock_server
+  - command: ./bedrock_server
+ports:
+  - port: 19132
+    onOpen: open-preview
